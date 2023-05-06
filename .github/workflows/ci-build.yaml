@@ -1,0 +1,47 @@
+name: ci-nano-min
+
+# bump 1
+on: push
+
+jobs:
+  build_test:
+    name: nano-min-${{ matrix.platform.name }}-${{ matrix.pyver.name }}
+    runs-on: ${{ matrix.platform.distver }}
+    defaults:
+      run:
+        shell: bash -l {0}
+    strategy:
+      fail-fast: false
+      matrix:
+        pyver: [
+          { name: py311, distver: '3.11' },
+        ]
+        platform: [
+          { name: win, distver: windows-latest },
+          { name: linux, distver: ubuntu-latest },
+          { name: macOS, distver: macos-latest }
+        ]
+    steps:
+      - uses: actions/checkout@v3
+        # Add ninja
+      - name: Install ninja
+        run: |
+          if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+            sudo apt-get install ninja-build
+          elif [[ "$OSTYPE" == "darwin"* ]]; then
+            brew install ninja
+          elif [[ "$OSTYPE" == "win32" ]]; then
+            choco install ninja
+          fi
+      - uses: mamba-org/provision-with-micromamba@main # https://github.com/mamba-org/provision-with-micromamba
+        with:
+          channels: conda-forge
+          channel-priority: strict
+          environment-file: environment.yml
+          extra-specs: |
+            python=${{ matrix.pyver.distver }}
+
+      - name: build local packages
+        run: |
+          mamba mambabuild . --python ${{ matrix.pyver.distver }} -c conda-forge --override-channels
+        working-directory: ./conda

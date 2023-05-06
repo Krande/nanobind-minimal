@@ -1,0 +1,10 @@
+name: nano-min
+channels:
+  - conda-forge
+dependencies:
+  - nanobind
+  - pytest
+  - scikit-build-core
+  - cmake
+  - conda-build
+  - boa

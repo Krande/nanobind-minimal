@@ -1,0 +1,38 @@
+package:
+  name: nano-min
+  version: 0.1.0
+
+source:
+  path: ../
+
+build:
+  number: 0
+  script: python -m pip install -v .
+
+requirements:
+  build:
+    - python
+    - scikit-build-core
+    - nanobind
+    - pip
+  run:
+    - python
+    - pytest
+
+test:
+  source_files:
+    - tests
+  requires:
+    - pytest
+  commands:
+    - pytest tests
+
+about:
+  home: https://github.com/Krande/nano-cpp-minimal
+  license: "GPL-3.0-or-later"
+  license_family: GPL3
+  summary: "An example demonstrating a minimal python wrapper for c++ code"
+
+extra:
+  recipe-maintainers:
+    - Krande
