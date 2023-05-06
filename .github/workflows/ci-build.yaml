@@ -4,6 +4,7 @@ name: ci-nano-min
 on:
   push:
     paths:
+      - *
       - !README.md
       - !.gitignore
 
