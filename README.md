@@ -70,3 +70,7 @@ Installing as conda package
 mamba mambabuild . -c conda-forge --python 3.11 --override-channels
 mamba install --use-local nano-min
 ```
+
+## Notes
+
+* If the python stubs are not updated in your IDE during development try uninstalling and reinstalling the package.
