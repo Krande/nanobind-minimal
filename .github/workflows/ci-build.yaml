@@ -1,7 +1,11 @@
 name: ci-nano-min
 
 # bump 1
-on: push
+on:
+  push:
+    paths:
+      - !README.md
+      - !.gitignore
 
 jobs:
   build_test:

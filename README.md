@@ -21,6 +21,28 @@ First install the pre-requisites for `nanobind` and `scikit-build-core` build re
 mamba env update -f environment.yml --prune
 ```
 
+If you are using CLION and want to get type hints from the c++ packages in your conda environment, 
+I recommend creating a batch files to set the environment variables and use that as an environment file. 
+See Build, Execution, Deployment > Toolchains -> Add Environment -> Environment file. 
+
+Here is an example of a `setup.bat` file that I use to set the environment variables for CLION.
+
+    :: setup.bat
+    @echo off
+    
+    :: mamba env update -f environment.yml --prune
+    :: mamba activate nano-occt
+    
+    set CMAKE_PREFIX_PATH=<path_to_conda_env>
+    set CMAKE_INSTALL_PREFIX=%CMAKE_PREFIX_PATH%
+    set OpenCASCADE_DIR=%CMAKE_PREFIX_PATH%/Library/lib/cmake/opencascade
+    set OpenCASCADE_INCLUDE_DIR=%CMAKE_PREFIX_PATH%/Library/include/opencascade
+    set Python_EXECUTABLE=%CMAKE_PREFIX_PATH%/python.exe
+    set PYTHON_INCLUDE_DIR=%CMAKE_PREFIX_PATH%/include
+    set PYTHON_LIBRARY=%CMAKE_PREFIX_PATH%/Library
+    set LIBRARY_PREFIX=%CMAKE_PREFIX_PATH%/Library
+
+
 ## Locally compile the python package
 
 ### Fast (editable) install
