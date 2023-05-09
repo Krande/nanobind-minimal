@@ -7,11 +7,7 @@ source:
 
 build:
   number: 0
-  script:
-    - "{{ PYTHON }} -m pip install -v ."
-    - build.sh  # [unix]
-    - bld.bat  # [win]
-
+  script: python -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
   build:
@@ -25,6 +21,10 @@ requirements:
   host:
     - python
 
+  run:
+    - python
+
+
 test:
   source_files:
     - tests
@@ -32,6 +32,10 @@ test:
     - pytest
   commands:
     - pytest tests
+
+outputs:
+  - name: nano-min
+    script: copy_files.bat
 
 about:
   home: https://github.com/Krande/nano-cpp-minimal
