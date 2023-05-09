@@ -45,30 +45,20 @@ Here is an example of a `setup.bat` file that I use to set the environment varia
 
 
 ## Locally compile the python package
-
-### Fast (editable) install
-
-Activate the `nano-min` environment (ie. `mamba activate nano-min`) and install the package in editable mode and build packages
-located in the current env (much faster, but at the expense of no type hints for your IDE).
+Open a terminal and navigate to the root directory.
+Activate the `nano-min` environment (ie. `mamba activate nano-min`) and install the package using the following command.
 
 ```bash
-pip install --no-build-isolation -ve.
+pip install --no-build-isolation . -v
 ```
 
-### Slow (non-editable) install
-
-Build the package and install it in the current environment.
-
-```bash
-pip install -v . --no-deps --ignore-installed
-```
-
-### Conda Build install
-
-Installing as conda package
+## Conda Build install
+Open a terminal and navigate to the root directory.
+Activate the `nano-min` environment (ie. `mamba activate nano-min`) and compile the conda package 
+using the following command.
 
 ```bash
-mamba mambabuild . -c conda-forge --python 3.11 --override-channels
+mamba mambabuild conda -c conda-forge --python 3.11 --override-channels
 mamba install --use-local nano-min
 ```
 
