@@ -48,7 +48,7 @@ Here is an example of a `setup.bat` file that I use to set the environment varia
 
 ### Fast (editable) install
 
-Activate the `nano-min` environment and install the package in editable mode and build packages
+Activate the `nano-min` environment (ie. `mamba activate nano-min`) and install the package in editable mode and build packages
 located in the current env (much faster, but at the expense of no type hints for your IDE).
 
 ```bash

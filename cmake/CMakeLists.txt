@@ -25,8 +25,8 @@ find_package(nanobind CONFIG REQUIRED)
 # We are now ready to compile the actual extension module
 nanobind_add_module(
         _my_ext_impl
-        src/my_ext.cpp
+        ../src/my_ext.cpp
 )
 
 # Install directive for scikit-build
-install(TARGETS _my_ext_impl LIBRARY DESTINATION .)
+install(TARGETS _my_ext_impl LIBRARY DESTINATION ..)

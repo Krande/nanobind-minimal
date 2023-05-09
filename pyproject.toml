@@ -31,11 +31,15 @@ classifiers = [
 "Bug Tracker" = "https://github.com/Krande/nanobind-minimal/issues"
 
 [tool.scikit-build]
+# NanoBind uses features only available on macOS 10.14 or newer
+# error: aligned deallocation function of type 'void (void *, std::align_val_t) noexcept'
+# is only available on macOS 10.14 or newer
+# Therefore, we set the deployment target to 10.14
 # https://scikit-build.readthedocs.io/en/latest/generators.html#default-deployment-target-and-architecture
-cmake.args = ["-DCMAKE_OSX_DEPLOYMENT_TARGET:STRING=10.14"]
+cmake.args = ["-S", "./cmake", "-DCMAKE_OSX_DEPLOYMENT_TARGET:STRING=10.14", "-Wno-dev"]
 cmake.verbose = true
 
-build-dir = "build/{wheel_tag}"
+build-dir = "cmake/build/{wheel_tag}"
 
 # This is the only editable mode currently
 editable.mode = "redirect"
