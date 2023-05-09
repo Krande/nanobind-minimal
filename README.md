@@ -31,7 +31,8 @@ Here is an example of a `setup.bat` file that I use to set the environment varia
 
     :: mamba env update -f environment.yml --prune
     :: mamba activate nano-occt
-
+    
+    set MY_PY_VER=3.11
     set PREFIX=<path_to_your_conda_env>
     set LIBRARY_PREFIX=%PREFIX%/Library
     set CMAKE_PREFIX_PATH=%PREFIX%;%LIBRARY_PREFIX%/include;%LIBRARY_PREFIX%/lib;%LIBRARY_PREFIX%/bin
