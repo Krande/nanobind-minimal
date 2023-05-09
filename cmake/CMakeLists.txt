@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(my_ext LANGUAGES CXX)
+project(nano-min LANGUAGES CXX)
 
 # Perform a release build by default
 if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
