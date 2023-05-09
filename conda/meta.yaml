@@ -7,20 +7,23 @@ source:
 
 build:
   number: 0
-  script: python -m pip install -v .
+  script:
+    - "{{ PYTHON }} -m pip install -v ."
+    - build.sh  # [unix]
+    - bld.bat  # [win]
+
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - python
     - scikit-build-core
+    - python
     - cmake
     - nanobind
 
-  run:
+  host:
     - python
-    - pytest
 
 test:
   source_files:
