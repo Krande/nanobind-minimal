@@ -21,9 +21,9 @@ First install the pre-requisites for `nanobind` and `scikit-build-core` build re
 mamba env update -f environment.yml --prune
 ```
 
-If you are using CLION and want to get type hints from the c++ packages in your conda environment, 
-I recommend creating a batch files to set the environment variables and use that as an environment file. 
-See Build, Execution, Deployment > Toolchains -> Add Environment -> Environment file. 
+If you are using CLION and want to get type hints from the c++ packages in your conda environment,
+I recommend creating a batch files to set the environment variables and use that as an environment file.
+See Build, Execution, Deployment > Toolchains -> Add Environment -> Environment file.
 
 Here is an example of a `setup.bat` file that I use to set the environment variables for CLION.
 
@@ -43,8 +43,8 @@ Here is an example of a `setup.bat` file that I use to set the environment varia
     set PYTHON_EXECUTABLE=%PREFIX%/python.exe
     set PYTHON_LIBRARY=%PREFIX%/libs/python%MY_PY_VER%.lib
 
-
 ## Locally compile the python package
+
 Open a terminal and navigate to the root directory.
 Activate the `nano-min` environment (ie. `mamba activate nano-min`) and install the package using the following command.
 
@@ -52,9 +52,19 @@ Activate the `nano-min` environment (ie. `mamba activate nano-min`) and install 
 pip install --no-build-isolation . -v
 ```
 
+This will install the package into the `nano-min` environment and you can use it as you would any other python package.
+
+```python
+import my_ext
+
+res = ext.add(1, 2)
+print(res)
+```
+
 ## Conda Build install
+
 Open a terminal and navigate to the root directory.
-Activate the `nano-min` environment (ie. `mamba activate nano-min`) and compile the conda package 
+Activate the `nano-min` environment (ie. `mamba activate nano-min`) and compile the conda package
 using the following command.
 
 ```bash
