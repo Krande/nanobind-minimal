@@ -30,7 +30,7 @@ Here is an example of a `setup.bat` file that I use to set the environment varia
     @echo off
 
     :: mamba env update -f environment.build.yml --prune
-    :: mamba activate nano-occt
+    :: mamba activate nano-min
     
     set MY_PY_VER=3.11
     set PREFIX=<path_to_your_conda_env>
