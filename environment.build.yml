@@ -7,4 +7,6 @@ dependencies:
   - scikit-build-core
   - cmake
   - conda-verify
+  - numpy
+  - nomkl
   - boa

@@ -38,11 +38,12 @@ classifiers = [
 # https://scikit-build.readthedocs.io/en/latest/generators.html#default-deployment-target-and-architecture
 cmake.args = ["-DCMAKE_OSX_DEPLOYMENT_TARGET:STRING=10.14", "-Wno-dev"]
 cmake.verbose = true
+cmake.build-type = "Debug"
 
 build-dir = "build/{wheel_tag}"
 
 # This is the only editable mode currently
 editable.mode = "redirect"
 
-wheel.packages = ["src/my_ext"]
-wheel.install-dir = "my_ext"
+wheel.packages = ["src/nano_min"]
+wheel.install-dir = "nano_min"
