@@ -17,7 +17,6 @@ requirements:
     - pip
   run:
     - python
-    - pytest
 
 test:
   source_files:
@@ -28,7 +27,7 @@ test:
     - pytest tests
 
 about:
-  home: https://github.com/Krande/nano-cpp-minimal
+  home: https://github.com/Krande/nanobind-minimal
   license: "GPL-3.0-or-later"
   license_family: GPL3
   summary: "An example demonstrating a minimal python wrapper for c++ code"

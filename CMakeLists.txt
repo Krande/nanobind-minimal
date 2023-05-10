@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(my_ext LANGUAGES CXX)
+project(nano-min LANGUAGES CXX)
 
 # Perform a release build by default
 if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
@@ -25,8 +25,8 @@ find_package(nanobind CONFIG REQUIRED)
 # We are now ready to compile the actual extension module
 nanobind_add_module(
         _my_ext_impl
-        ../src/my_ext.cpp
+        src/my_ext.cpp
 )
 
 # Install directive for scikit-build
-install(TARGETS _my_ext_impl LIBRARY DESTINATION ..)
+install(TARGETS _my_ext_impl LIBRARY DESTINATION .)
