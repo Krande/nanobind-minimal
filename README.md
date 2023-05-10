@@ -18,7 +18,7 @@ The example should cover the following:
 First install the pre-requisites for `nanobind` and `scikit-build-core` build requirements from conda-forge.
 
 ```bash
-mamba env update -f environment.yml --prune
+mamba env update -f environment.build.yml --prune
 ```
 
 If you are using CLION and want to get type hints from the c++ packages in your conda environment,
