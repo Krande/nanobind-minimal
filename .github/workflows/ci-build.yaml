@@ -41,7 +41,7 @@ jobs:
         with:
           channels: conda-forge
           channel-priority: strict
-          environment-file: environment.yml
+          environment-file: environment.build.yml
           extra-specs: |
             python=${{ matrix.pyver.distver }}
 

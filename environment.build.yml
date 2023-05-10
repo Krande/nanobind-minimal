@@ -6,5 +6,5 @@ dependencies:
   - pytest
   - scikit-build-core
   - cmake
-  - conda-build
+  - conda-verify
   - boa
