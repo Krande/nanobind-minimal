@@ -14,9 +14,11 @@ requirements:
     - python
     - scikit-build-core
     - nanobind
+    - numpy
     - pip
   run:
     - python
+    - numpy
 
 test:
   source_files:
