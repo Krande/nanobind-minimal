@@ -17,6 +17,7 @@ requirements:
     - pip
   run:
     - python
+    - numpy
 
 test:
   source_files:
