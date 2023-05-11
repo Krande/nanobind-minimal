@@ -2,11 +2,11 @@ name: nano-min
 channels:
   - conda-forge
 dependencies:
-  - nanobind
-  - pytest
-  - scikit-build-core
-  - cmake
-  - conda-verify
-  - numpy
+  - nanobind ==1.2.0
+  - pytest ==7.3.1
+  - scikit-build-core ==0.3.3
+  - cmake ==3.26.3
+  - conda-verify ==3.1.1
+  - numpy ==1.24.3
   - nomkl
-  - boa
+  - boa ==0.14.0

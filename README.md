@@ -32,8 +32,8 @@ Here is an example of a `setup.bat` file that I use to set the environment varia
     :: mamba env update -f environment.build.yml --prune
     :: mamba activate nano-min
     
-    set MY_PY_VER=3.11
-    set PREFIX=<path_to_your_conda_env>
+    set MY_PY_VER=311
+    set PREFIX=c:/mambaforge/envs/nano-min
     set LIBRARY_PREFIX=%PREFIX%/Library
     set CMAKE_PREFIX_PATH=%PREFIX%;%LIBRARY_PREFIX%/include;%LIBRARY_PREFIX%/lib;%LIBRARY_PREFIX%/bin
 
@@ -42,6 +42,8 @@ Here is an example of a `setup.bat` file that I use to set the environment varia
 
     set PYTHON_EXECUTABLE=%PREFIX%/python.exe
     set PYTHON_LIBRARY=%PREFIX%/libs/python%MY_PY_VER%.lib
+
+Now you are ready to write some c++ code and wrap it with python.
 
 ## Locally compile the python package
 
